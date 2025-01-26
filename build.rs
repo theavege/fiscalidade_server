@@ -1,8 +1,6 @@
 #[cfg(target_os = "windows")]
-use winres;
-
-#[cfg(target_os = "windows")]
 fn main() {
+    use winres;
     use std::io::Write;
     // only build the resource for release builds
     // as calling rc.exe might be slow
