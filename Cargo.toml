@@ -15,8 +15,8 @@ default = ["embed_webservices"]
 embed_webservices = ["fiscalidade/embed_webservices"]
 
 [dependencies]
-rocket = "0.5"
-rocket_contrib = { version = "0.4", default-features = false, features = ["json", "diesel_postgres_pool"] }
+rocket = "^0.4"
+rocket_contrib = { version = "^0.4", default-features = false, features = ["json", "diesel_postgres_pool"] }
 diesel = { version = "^1", default-features = false, features = ["chrono", "postgres"] }
 diesel_migrations = { version = "^1", default-features = false, features = ["postgres"] }
 serde_json = { version = "^1", features = ["preserve_order"] }

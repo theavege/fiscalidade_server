@@ -31,22 +31,11 @@ jobs:
         with:
           submodules: true
 
-      - name: Set up Rust
-        uses: actions-rs/toolchain@v1
-        with:
-          toolchain: nightly
-          profile: minimal
-          override: true
-
       - name: Cargo
         if: runner.os == 'Linux'
         shell: bash
         run: |
           set -xeuo pipefail
-          sudo bash -c '
-            apt-get update
-            apt-get install -y cargo rust{fmt,-clippy}
-          ' >/dev/null
           cargo build --quiet --ignore-rust-version
           cargo clippy --quiet --ignore-rust-version
           cargo test --quiet
