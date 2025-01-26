@@ -24,7 +24,7 @@ serde = { version = "^1", features = ["derive"] }
 serde_derive = "^1"
 fiscalidade = "^0.4"
 anyhow = "^1"
-thiserror = "^1"
+thiserror = "2.0"
 log = "^0.4"
 simplelog = "^0.7"
 dotenv = "^0.15"
