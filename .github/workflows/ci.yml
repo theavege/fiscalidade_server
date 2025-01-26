@@ -36,8 +36,8 @@ jobs:
         shell: bash
         run: |
           set -xeuo pipefail
-          cargo build --quiet --ignore-rust-version
-          cargo clippy --quiet --ignore-rust-version
+          cargo build --quiet
+          cargo clippy --quiet
           cargo test --quiet
           cargo fmt --check --all
 
