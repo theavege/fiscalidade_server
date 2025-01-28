@@ -36,6 +36,7 @@ jobs:
         shell: bash
         run: |
           cat '/etc/os-release'
+          rustc -V
           set -xeuo pipefail
           cargo build --quiet
           cargo clippy --quiet
