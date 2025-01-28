@@ -39,7 +39,7 @@ jobs:
           rustc -V
           set -xeuo pipefail
           sudo apt-get update
-          sudo apt-get install -y cargo=1.74
+          sudo apt-get install -y cargo=1.74.1+dfsg0ubuntu1-0ubuntu13
           cargo build --quiet
           cargo clippy --quiet
           cargo test --quiet
