@@ -38,7 +38,7 @@ jobs:
           cat '/etc/os-release'
           set -xeuo pipefail
           sudo apt-get update
-          sudo apt-get upgrade -y
+          sudo apt-get install -y rustc=1.74.1+dfsg0ubuntu1-0ubuntu13
           rustc -V
           cargo build --quiet
           cargo clippy --quiet
