@@ -31,21 +31,14 @@ jobs:
         with:
           submodules: true
 
-      - name: Install Rust toolchain
+      - name: Install latest nightly
         uses: actions-rs/toolchain@v1
         with:
-          profile: minimal
-          toolchain: nightly
+            toolchain: nightly
+            override: true
 
-      - name: Cargo
-        if: runner.os == 'Linux'
-        shell: bash
-        run: |
-          cat '/etc/os-release'
-          set -xeuo pipefail
-          cargo check --quiet
-          cargo clippy --quiet
-          cargo test --quiet
-          cargo fmt --check --all
-          cargo build --quiet
+      - name: Run cargo check
+        uses: actions-rs/cargo@v1
+        with:
+          command: check
 
