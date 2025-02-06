@@ -31,17 +31,21 @@ jobs:
         with:
           submodules: true
 
+      - name: Install Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: nightly
+
       - name: Cargo
         if: runner.os == 'Linux'
         shell: bash
         run: |
           cat '/etc/os-release'
           set -xeuo pipefail
-          sudo apt-get update
-          sudo apt-get install -y rustc=1.74.1+dfsg0ubuntu1-0ubuntu13
-          rustc -V
-          cargo build --quiet
+          cargo check --quiet
           cargo clippy --quiet
           cargo test --quiet
           cargo fmt --check --all
+          cargo build --quiet
 
